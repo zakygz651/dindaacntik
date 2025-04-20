@@ -1,0 +1,22 @@
+[
+    {"name": "flood", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "tls", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "ninja", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "harder", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "glory", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "httpx", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "sigma", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "bomb", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "bypass", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "java", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "strike", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "pluto", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "raw", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "stars", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "http1", "description": "layer 7 - Attack Url [normal]", "duration": "500"},
+    {"name": "tcp", "description": "layer 4 - Attack Url [normal]", "duration": "500"},
+    {"name": "udp", "description": "layer 4 - Attack Url [normal]", "duration": "500"},
+    {"name": "kill-ping", "description": "layer 4 - Attack Url [normal]", "duration": "500"},
+    {"name": "kill-do", "description": "layer 4 - Attack Url [normal]", "duration": "500"},
+    {"name": "samp", "description": "layer 4 - Attack Url [normal]", "duration": "500"}
+]
