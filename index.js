@@ -68,6 +68,19 @@ function clearUserAgent() {
   }
 }
 // [========================================] //
+function runCommand(command, args) {
+  return new Promise((resolve, reject) => {
+    const proc = spawn(command, args, { stdio: 'inherit' });
+
+    proc.on('close', (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(`${command} exited with code ${code}`));
+    });
+
+    proc.on('error', reject);
+  });
+}
+
 async function bootup() {
   try {
     console.log(`|| ▓░░░░░░░░░ || 10%`);
@@ -124,6 +137,7 @@ async function bootup() {
     console.error(error);
   }
 }
+
 // ====== //
 async function pushOngoing(target, methods, duration) {
   const startTime = Date.now();
