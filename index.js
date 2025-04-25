@@ -87,7 +87,7 @@ async function bootup() {
     console.log(`|| ▓▓▓▓▓▓▓▓▓▓ || 100%`);
     await sleep(700);
     console.clear();
-    console.log(`Welcome To Darknet Tools 6.0.0`);
+    console.log(`Welcome To dinDOS Tools 6.0.0`);
     await sleep(1000);
     await banner();
     console.log(`Type "help" For Showing All Available Commands`);
@@ -1419,7 +1419,7 @@ console.log(`
 Target   : ${target}
 Duration : ${duration}
 Methods  : SAMP Flooder
-Creator  : Darknet`)
+Creator  : dinDOS`)
 } catch (error) {
   console.log(`Oops Something Went Wrong`)
     sigma()
@@ -1535,7 +1535,7 @@ async function transformBot(args) {
       };
 
       Sikma.onText(/\/start/, (msg) => {
-        Sikma.sendMessage(telegramId, 'Welcome to **Darknet Mode Bot Tele**. Select an option:', mainMenu);
+        Sikma.sendMessage(telegramId, 'Welcome to **dinDOS Mode Bot Tele**. Select an option:', mainMenu);
       });
 
       Sikma.on('callback_query', async (callbackQuery) => {
@@ -1543,7 +1543,7 @@ async function transformBot(args) {
 
         switch (action) {
           case 'main_start':
-            await Sikma.sendMessage(telegramId, 'Welcome to **Darknet Mode Bot Tele**. Select an option:', mainMenu);
+            await Sikma.sendMessage(telegramId, 'Welcome to **dinDOS Mode Bot Tele**. Select an option:', mainMenu);
             break;
           case 'kill_ssh':
             await KillSSH1(telegramId, Sikma);
@@ -1920,7 +1920,7 @@ Ryan Dahl (pembuat nodejs)
 Chat Gpt 
 `
 permen.question(
-'[\x1b[1m\x1b[32mDarknet\x1b[0m]: ', (input) => {
+'[\x1b[1m\x1b[32mdinDOS\x1b[0m]: ', (input) => {
     const [command, ...args] = input.trim().split(' ');
 
   if (command === 'help') {
