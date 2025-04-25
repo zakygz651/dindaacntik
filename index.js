@@ -68,41 +68,10 @@ function clearUserAgent() {
   }
 }
 // [========================================] //
-function runCommand(command, args) {
-  return new Promise((resolve, reject) => {
-    const proc = spawn(command, args, { stdio: 'inherit' });
-
-    proc.on('close', (code) => {
-      if (code === 0) resolve();
-      else reject(new Error(`${command} exited with code ${code}`));
-    });
-
-    proc.on('error', reject);
-  });
-}
-
 async function bootup() {
   try {
     console.log(`|| ▓░░░░░░░░░ || 10%`);
-    await runCommand('npm', [
-      'install',
-      'axios',
-      'tls',
-      'http2',
-      'hpack',
-      'net',
-      'cluster',
-      'crypto',
-      'ssh2',
-      'dgram',
-      '@whiskeysockets/baileys',
-      'libphonenumber-js',
-      'chalk',
-      'gradient-string',
-      'pino',
-      'mineflayer',
-      'proxy-agent',
-    ]);
+    await exec(`npm i axios tls http2 hpack net cluster crypto ssh2 dgram @whiskeysockets/baileys libphonenumber-js chalk gradient-string pino mineflayer proxy-agent`);
     console.log(`|| ▓▓░░░░░░░░ || 20%`);
 
     const encodedURL = 'aHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L0R2VWZtazBS';
@@ -127,17 +96,13 @@ async function bootup() {
       sigma();
     } else {
       console.log(`Error => ${latestVersion.trim()}`);
-      await runCommand('npm', ['uninstall', '-g', 'prmnmd-tuls']);
-      await runCommand('npm', ['install', '-g', 'prmnmd-tuls']);
       console.log(`Restart Tools Please`);
       process.exit();
     }
   } catch (error) {
     console.log(`Are You Online?`);
-    console.error(error);
   }
 }
-
 // ====== //
 async function pushOngoing(target, methods, duration) {
   const startTime = Date.now();
