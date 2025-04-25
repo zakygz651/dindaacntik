@@ -74,35 +74,30 @@ async function bootup() {
     await exec(`npm i axios tls http2 hpack net cluster crypto ssh2 dgram @whiskeysockets/baileys libphonenumber-js chalk gradient-string pino mineflayer proxy-agent`);
     console.log(`|| ▓▓░░░░░░░░ || 20%`);
 
-    const encodedURL = 'aHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L0R2VWZtazBS';
-    const decodedURL = Buffer.from(encodedURL, 'base64').toString('utf8');
+    const decodedURL = 'https://pastebin.com/raw/DvUfmk0R'; // URL yang sudah didekodekan
     const getLatestcheros = await fetch(decodedURL);
 
-    const latestVersion = await getLatestcheros.text();
     console.log(`|| ▓▓▓░░░░░░░ || 30%`);
 
-    if (version === latestVersion.trim()) {
-      console.log(`|| ▓▓▓▓▓▓░░░░ || 60%`);
-      await scrapeProxy();
-      console.log(`|| ▓▓▓▓▓▓▓░░░ || 70%`);
-      await scrapeUserAgent();
-      console.log(`|| ▓▓▓▓▓▓▓▓▓▓ || 100%`);
-      await sleep(700);
-      console.clear();
-      console.log(`Welcome To Darknet Tools 6.0.0`);
-      await sleep(1000);
-      await banner();
-      console.log(`Type "help" For Showing All Available Commands`);
-      sigma();
-    } else {
-      console.log(`Error => ${latestVersion.trim()}`);
-      console.log(`Restart Tools Please`);
-      process.exit();
-    }
+    // Langsung lanjut tanpa memeriksa versi
+    console.log(`|| ▓▓▓▓▓▓░░░░ || 60%`);
+    await scrapeProxy();
+    console.log(`|| ▓▓▓▓▓▓▓░░░ || 70%`);
+    await scrapeUserAgent();
+    console.log(`|| ▓▓▓▓▓▓▓▓▓▓ || 100%`);
+    await sleep(700);
+    console.clear();
+    console.log(`Welcome To Darknet Tools 6.0.0`);
+    await sleep(1000);
+    await banner();
+    console.log(`Type "help" For Showing All Available Commands`);
+    sigma();
+
   } catch (error) {
     console.log(`Are You Online?`);
   }
 }
+
 // ====== //
 async function pushOngoing(target, methods, duration) {
   const startTime = Date.now();
